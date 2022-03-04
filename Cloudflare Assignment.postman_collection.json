@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "ddce3de9-a839-4939-ac97-0d096604b2cc",
+		"name": "Cloudflare Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Job",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Queue-Consumer",
+						"value": "0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/jobs/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jobs",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enqueue",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Queue-Consumer",
+						"value": "0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"NOT_TIME_CRITICAL\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jobs/enqueue",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jobs",
+						"enqueue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dequeue",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Queue-Consumer",
+						"value": "0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/jobs/dequeue",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jobs",
+						"dequeue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Conclude",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Queue-Consumer",
+						"value": "0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/jobs/0/conclude",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jobs",
+						"0",
+						"conclude"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
